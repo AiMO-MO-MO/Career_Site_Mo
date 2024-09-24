@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Owens - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(135deg, #4a90e2, #3a7bd5);
+            color: #ffffff;
+            text-align: left;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffffff;
+        }
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        .header-text p {
+            font-size: 1.1rem;
+            color: #e8f0fe;
+            margin: 0;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start; // This will align the tops of all columns
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .middle-column {
+            flex: 2;
+        }
+
+        #experience, #education, #about {
+            margin-top: 0; // Remove top margin to align with other sections
+        }
+
+        .job {
+            margin-bottom: 2rem;
+        }
+
+        .job h3 {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .job p {
+            margin: 0.5rem 0;
+            font-style: italic;
+        }
+
+        .job ul {
+            padding-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            .left-column, .middle-column, .right-column {
+                max-width: 100%;
+            }
+
+            #experience, #education {
+                position: static;
+            }
+        }
+
+        section {
+            margin-bottom: 4rem;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            font-size: 2rem;
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0;
+        }
+        .skills-list li {
+            background-color: #e8f0fe;
+            color: #4a90e2;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        .skills-list li:hover {
+            background-color: #4a90e2;
+            color: #ffffff;
+        }
+        .project {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h3 {
+            color: #4a90e2;
+            font-size: 1.5rem;
+        }
+        .project a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .project a:hover {
+            color: #3a7bd5;
+            text-decoration: underline;
+        }
+        .project-nav button {
+            background: #4a90e2;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .project-nav button:hover {
+            background-color: #3a7bd5;
+        }
+        #contact a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        #contact a:hover {
+            color: #3a7bd5;
+            text-decoration: underline;
+        }
+
+        .right-column {
+            flex: 1;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #education {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        #education:hover {
+            transform: translateY(-5px);
+        }
+
+        #education h2 {
+            font-size: 2rem;
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .education-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .right-column {
+                max-width: 100%;
+            }
+
+            #education {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../Site Files/Mo.jpg" alt="Matt Owens" class="profile-img" onerror="this.onerror=null; this.src='../Site Files/Mo.JPG'; this.alt='Image not found';">
+            <div class="header-text">
+                <h1>Matt Owens</h1>
+                <p>Business Analyst | Data Analyst</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="left-column">
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="job">
+                    <h3>Business Analyst - Blackbaud</h3>
+                    <p>February 2020 - March 2023</p>
+                    <p>Analyzed and priced software customization requests for nonprofit organizations, ensuring alignment with client needs and company capabilities.</p>
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Promoted twice</li>
+                        <li>Collaborated with PS and Product teams to develop new services and update product offerings</li>
+                        <li>Internally certified in Fundraising, P2P, Analytics, and Payment Processing</li>
+                        <li>Integrated Advanced Analytic services into the custom request process</li>
+                        <li>Rebranded 100+ Analytic services</li>
+                    </ul>
+                    <h4>Reason for leaving: Layoff</h4>
+                </div>
+                <div class="job">
+                    <h3>Solutions Architect - Social Solutions</h3>
+                    <p>June 2018 - March 2019</p>
+                    <p>Implementation lead on Apricot and ETO software implementations, including demos, requirements gathering, configuration, data migrations, report building, training, and support.</p>
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Developed Apricot Core implementation plan</li>
+                        <li>Collaborated with Product teams to develop dashboards and configurations for new Apricot 360 offering</li>
+                    </ul>
+                    <h4>Reason for leaving: Layoff</h4>
+                </div>
+                <div class="job">
+                    <h3>Business Analyst - CGI</h3>
+                    <p>June 2015 - June 2018</p>
+                    <p>Functional Design, Requirements Gathering, Testing, and Report Development for Advantage ERP software.</p>
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Delivered 70+ reports to clients using SAP Business Objects</li>
+                        <li>Traveled client site to develop reports </li>
+                        <li>Third key achievement or responsibility</li>
+                    </ul>
+                    <h4>Reason for leaving: New Opportunity</h4>
+                </div>
+            </section>
+        </div>
+
+        <div class="middle-column">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>My experience is delivering, supporting, and improving SaaS products. I enjoy the technical aspects of learning the product and applying that knowledge to improving the product and processes. I am used to working with teams across the organization to solve a customer's problem.
+                    This began at my first job working on the AdvantageERP designing and testing features and integrations, culmimating with flying to Lansing, Michigan weekly to develop reports for the state of Michigan. Learning valuable lessons in reporting, data warehousing, and client  
+                    Recently, I began to focus in on data analytics and how it can be used to solve business problems. After completing UT Austin's Data Analytics and Visualization Professional Certificate Program, I am comfortable with SQL, Tableau, and Python and capable of building simple machine learning models and working with LLMs. 
+                </p>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Programming Languages</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item proficient">Python</li>
+                            <li class="skill-item proficient">SQL</li>
+                            <li class="skill-item proficient">JavaScript</li>
+                            <li class="skill-item familiar">HTML5</li>
+                            <li class="skill-item familiar">CSS3</li>
+                            <li class="skill-item proficient">R</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Data Analysis & Visualization</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item proficient">Pandas</li>
+                            <li class="skill-item proficient">Matplotlib</li>
+                            <li class="skill-item proficient">Tableau</li>
+                            <li class="skill-item familiar">Seaborn</li>
+                            <li class="skill-item familiar">Beautiful Soup</li>
+                            <li class="skill-item proficient">Power BI</li>
+                            <li class="skill-item proficient">Excel (Advanced)</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Machine Learning & AI</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item familiar">Scikit-learn</li>
+                            <li class="skill-item familiar">PyTorch</li>
+                            <li class="skill-item proficient">TensorFlow</li>
+                            <li class="skill-item familiar">Classification</li>
+                            <li class="skill-item familiar">Regression</li>
+                            <li class="skill-item proficient">Clustering</li>
+                            <li class="skill-item proficient">Natural Language Processing</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item proficient">API</li>
+                            <li class="skill-item proficient">ETL</li>
+                            <li class="skill-item proficient">Salesforce</li>
+                            <li class="skill-item proficient">Azure DevOps</li>
+                            <li class="skill-item proficient">SharePoint</li>
+                            <li class="skill-item proficient">Git</li>
+                            <li class="skill-item proficient">Jupyter Notebooks</li>
+                            <li class="skill-item proficient">MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Domain Knowledge</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item proficient">Peer 2 Peer Fundraising</li>
+                            <li class="skill-item proficient">CRM (Standard and Enterprise)</li>
+                            <li class="skill-item proficient">Statistical Analysis</li>
+                            <li class="skill-item proficient">Big Data Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project active">
+                    <h3>GitHub Project 1</h3>
+                    <img src="project1-screenshot.jpg" alt="Project 1 Screenshot">
+                    <p>Detailed description of the project, including technologies used and key features.</p>
+                    <p>GitHub: <a href="https://github.com/yourusername/project1" target="_blank">View Source</a></p>
+                </div>
+                <div class="project">
+                    <h3>GitHub Project 2</h3>
+                    <img src="project2-screenshot.jpg" alt="Project 2 Screenshot">
+                    <p>Detailed description of the project, including technologies used and key features.</p>
+                    <p>GitHub: <a href="https://github.com/yourusername/project2" target="_blank">View Source</a></p>
+                </div>
+                <div class="project">
+                    <h3>Tableau Project 1</h3>
+                    <iframe src="https://public.tableau.com/views/YourTableauProject1/Dashboard1?:showVizHome=no&:embed=true" 
+                            width="100%" height="300" frameborder="0"></iframe>
+                    <p>Description of the Tableau project and its insights.</p>
+                    <p>Tableau Public: <a href="https://public.tableau.com/profile/yourusername#!/vizhome/YourTableauProject1" target="_blank">View Full Project</a></p>
+                </div>
+                <div class="project-nav">
+                    <button id="prevProject">Previous</button>
+                    <button id="nextProject">Next</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Texas McCombs School of Business - University of Texas at Austin</h3>
+                    <p>Data Analytics & Visualization | PCP</p>
+                </div>
+                <div class="education-item">
+                    <h3>Trevecca Nazarene University</h3>
+                    <p>BBA – Management | Cum Laude | May 2013</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        const projects = document.querySelectorAll('.project');
+        const prevButton = document.getElementById('prevProject');
+        const nextButton = document.getElementById('nextProject');
+        let currentProject = 0;
+
+        function showProject(index) {
+            projects.forEach(project => project.classList.remove('active'));
+            projects[index].classList.add('active');
+        }
+
+        function nextProject() {
+            currentProject = (currentProject + 1) % projects.length;
+            showProject(currentProject);
+        }
+
+        function prevProject() {
+            currentProject = (currentProject - 1 + projects.length) % projects.length;
+            showProject(currentProject);
+        }
+
+        nextButton.addEventListener('click', nextProject);
+        prevButton.addEventListener('click', prevProject);
+
+        // Auto-rotate projects every 5 seconds
+        setInterval(nextProject, 5000);
+    </script>
+</body>
+</html>
