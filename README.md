@@ -1,50 +1,35 @@
-# Matt Owens Portfolio
+# Matt Owens - Portfolio Website
+
+This repository contains the source code for my personal portfolio website. The site showcases my skills, experience, and projects in the field of Business Analysis and Data Analytics.
 
 ## Project Overview
 
-This project is a personal portfolio website for Matt Owens, showcasing his experience, skills, and projects in the field of Business Analysis and Data Analytics.
+I built this portfolio website using HTML, CSS, and JavaScript. It's designed to be a simple, yet effective representation of my professional profile. The site is hosted using GitHub Pages, making it easily accessible and maintainable.
 
-## Technologies Used
+## Key Features
+
+- Responsive design that works well on desktop and mobile devices
+- Interactive skills section with toggles for proficient and familiar skills
+- Project showcase with auto-rotating and manually navigable project cards
+- Download option for my resume
+- Links to my professional profiles (LinkedIn and GitHub)
+
+## Technology Stack
 
 - HTML5
 - CSS3
 - JavaScript
+- GitHub Pages for hosting
 
-## Development Process
+## Project Purpose
 
-This project marks my first experience using Cursor and its AI composer feature. I intentionally chose to use these tools to test their capabilities and explore a new development workflow.
+This website serves multiple purposes:
+1. To showcase my skills and experience to potential employers or clients
+2. To demonstrate my ability to create a functional, responsive website
+3. To provide a central hub for my professional online presence
 
-### Cursor and AI Composer
+The creation and maintenance of this site is itself a part of my portfolio, demonstrating my skills in web development, version control with Git, and deployment using GitHub Pages.
 
-[Cursor](https://cursor.sh/) is an AI-powered code editor that aims to enhance the coding experience. Its AI composer feature assists in writing, editing, and refactoring code.
+## Continuous Improvement
 
-My experience with Cursor and the AI composer was:
-
-1. **Efficient Code Generation**: The AI composer helped generate initial HTML structure and CSS styles, saving time in the setup phase.
-
-2. **Interactive Development**: I could describe changes or additions I wanted, and the AI would suggest code snippets or modifications.
-
-3. **Learning Opportunity**: Using the AI composer exposed me to different coding patterns and practices, enhancing my learning experience.
-
-4. **Iterative Refinement**: The ability to quickly generate and modify code allowed for rapid prototyping and iterative improvements.
-
-5. **Challenges**: While the AI was helpful, it sometimes required careful review and correction of its suggestions, especially for more complex or specific requirements.
-
-## Future Improvements
-
-- Add more detailed project descriptions and live demos
-- Implement a contact form
-- Enhance responsive design for better mobile experience
-- Integrate a blog section to share insights and experiences
-
-## Conclusion
-
-This project served as both a portfolio development exercise and an exploration of AI-assisted coding tools. While Cursor and its AI composer proved to be valuable assets, they also highlighted the continued importance of human oversight and decision-making in the development process.
-
-## Author
-
-Matt Owens
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+This project is continuously evolving. As I gain new skills, complete new projects, or receive feedback, I will update the website to reflect these changes.
